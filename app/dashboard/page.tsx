@@ -443,7 +443,7 @@ export default function DashboardPage() {
             </div>
             <div>
               <h1 className="text-xl font-bold text-white">SARTHI COMMAND CENTER</h1>
-              <p className="text-xs text-blue-400">Smart Autonomous Response Tactical Humanitarian Intelligence</p>
+              <p className="text-xs text-blue-400">SARTHI • Smart Area Reconnaissance, Tracking & Hazardous Inspection</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
