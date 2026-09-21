@@ -154,33 +154,33 @@ export default function SarthiRobot3D({
       {/* Six Suspension Wheels */}
       <group ref={wheelRef}>
         {/* Front Left */}
-        <mesh position={[-0.6, 0, 0.7]}>
-          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+        <mesh position={[-0.6, 0, 0.7]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} />
           <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} />
         </mesh>
         {/* Front Right */}
-        <mesh position={[0.6, 0, 0.7]}>
-          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+        <mesh position={[0.6, 0, 0.7]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} />
           <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} />
         </mesh>
         {/* Middle Left */}
-        <mesh position={[-0.6, 0, 0]}>
-          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+        <mesh position={[-0.6, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} />
           <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} />
         </mesh>
         {/* Middle Right */}
-        <mesh position={[0.6, 0, 0]}>
-          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+        <mesh position={[0.6, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} />
           <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} />
         </mesh>
         {/* Rear Left */}
-        <mesh position={[-0.6, 0, -0.7]}>
-          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+        <mesh position={[-0.6, 0, -0.7]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} />
           <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} />
         </mesh>
         {/* Rear Right */}
-        <mesh position={[0.6, 0, -0.7]}>
-          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+        <mesh position={[0.6, 0, -0.7]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.18, 0.18, 0.12, 16]} />
           <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} />
         </mesh>
       </group>

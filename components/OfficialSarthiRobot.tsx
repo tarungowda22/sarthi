@@ -297,19 +297,20 @@ export default function OfficialSarthiRobot({
             <boxGeometry args={[0.08, 0.15, 0.3]} />
           </mesh>
           {/* Wheel Hub */}
-          <mesh material={chromeMaterial}>
-            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+          <mesh material={chromeMaterial} rotation={[0, 0, Math.PI / 2]}>
+            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} />
           </mesh>
           {/* Tire */}
           <mesh 
             ref={el => { if (el) leftWheelsRef.current[0] = el }}
             material={tireMaterial}
+            rotation={[0, 0, Math.PI / 2]}
           >
-            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} />
           </mesh>
           {/* Wheel Rim */}
-          <mesh material={wheelMaterial}>
-            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} rotation={[0, 0, Math.PI / 2]} />
+          <mesh material={wheelMaterial} rotation={[0, 0, Math.PI / 2]}>
+            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} />
           </mesh>
           {/* Lug Nuts */}
           {[0, 1, 2, 3, 4, 5].map((i) => {
@@ -319,8 +320,9 @@ export default function OfficialSarthiRobot({
                 key={i}
                 position={[Math.sin(angle) * 0.12, 0, Math.cos(angle) * 0.12]}
                 material={chromeMaterial}
+                rotation={[0, 0, Math.PI / 2]}
               >
-                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} rotation={[0, 0, Math.PI / 2]} />
+                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} />
               </mesh>
             );
           })}
@@ -332,16 +334,16 @@ export default function OfficialSarthiRobot({
             <boxGeometry args={[0.08, 0.15, 0.3]} />
           </mesh>
           <mesh material={chromeMaterial}>
-            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} />
           </mesh>
           <mesh 
             ref={el => { if (el) rightWheelsRef.current[0] = el }}
             material={tireMaterial}
           >
-            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} />
           </mesh>
           <mesh material={wheelMaterial}>
-            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} />
           </mesh>
           {[0, 1, 2, 3, 4, 5].map((i) => {
             const angle = (i / 6) * Math.PI * 2;
@@ -351,7 +353,7 @@ export default function OfficialSarthiRobot({
                 position={[Math.sin(angle) * 0.12, 0, Math.cos(angle) * 0.12]}
                 material={chromeMaterial}
               >
-                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} rotation={[0, 0, Math.PI / 2]} />
+                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} />
               </mesh>
             );
           })}
@@ -363,16 +365,16 @@ export default function OfficialSarthiRobot({
             <boxGeometry args={[0.08, 0.15, 0.3]} />
           </mesh>
           <mesh material={chromeMaterial}>
-            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} />
           </mesh>
           <mesh 
             ref={el => { if (el) leftWheelsRef.current[1] = el }}
             material={tireMaterial}
           >
-            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} />
           </mesh>
           <mesh material={wheelMaterial}>
-            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} />
           </mesh>
           {[0, 1, 2, 3, 4, 5].map((i) => {
             const angle = (i / 6) * Math.PI * 2;
@@ -382,7 +384,7 @@ export default function OfficialSarthiRobot({
                 position={[Math.sin(angle) * 0.12, 0, Math.cos(angle) * 0.12]}
                 material={chromeMaterial}
               >
-                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} rotation={[0, 0, Math.PI / 2]} />
+                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} />
               </mesh>
             );
           })}
@@ -394,16 +396,16 @@ export default function OfficialSarthiRobot({
             <boxGeometry args={[0.08, 0.15, 0.3]} />
           </mesh>
           <mesh material={chromeMaterial}>
-            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} />
           </mesh>
           <mesh 
             ref={el => { if (el) rightWheelsRef.current[1] = el }}
             material={tireMaterial}
           >
-            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} />
           </mesh>
           <mesh material={wheelMaterial}>
-            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} />
           </mesh>
           {[0, 1, 2, 3, 4, 5].map((i) => {
             const angle = (i / 6) * Math.PI * 2;
@@ -413,7 +415,7 @@ export default function OfficialSarthiRobot({
                 position={[Math.sin(angle) * 0.12, 0, Math.cos(angle) * 0.12]}
                 material={chromeMaterial}
               >
-                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} rotation={[0, 0, Math.PI / 2]} />
+                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} />
               </mesh>
             );
           })}
@@ -425,16 +427,16 @@ export default function OfficialSarthiRobot({
             <boxGeometry args={[0.08, 0.15, 0.3]} />
           </mesh>
           <mesh material={chromeMaterial}>
-            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} />
           </mesh>
           <mesh 
             ref={el => { if (el) leftWheelsRef.current[2] = el }}
             material={tireMaterial}
           >
-            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} />
           </mesh>
           <mesh material={wheelMaterial}>
-            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} />
           </mesh>
           {[0, 1, 2, 3, 4, 5].map((i) => {
             const angle = (i / 6) * Math.PI * 2;
@@ -444,7 +446,7 @@ export default function OfficialSarthiRobot({
                 position={[Math.sin(angle) * 0.12, 0, Math.cos(angle) * 0.12]}
                 material={chromeMaterial}
               >
-                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} rotation={[0, 0, Math.PI / 2]} />
+                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} />
               </mesh>
             );
           })}
@@ -456,16 +458,16 @@ export default function OfficialSarthiRobot({
             <boxGeometry args={[0.08, 0.15, 0.3]} />
           </mesh>
           <mesh material={chromeMaterial}>
-            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.08, 0.08, 0.12, 16]} />
           </mesh>
           <mesh 
             ref={el => { if (el) rightWheelsRef.current[2] = el }}
             material={tireMaterial}
           >
-            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.22, 0.22, 0.15, 32]} />
           </mesh>
           <mesh material={wheelMaterial}>
-            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} rotation={[0, 0, Math.PI / 2]} />
+            <cylinderGeometry args={[0.18, 0.18, 0.16, 16]} />
           </mesh>
           {[0, 1, 2, 3, 4, 5].map((i) => {
             const angle = (i / 6) * Math.PI * 2;
@@ -475,7 +477,7 @@ export default function OfficialSarthiRobot({
                 position={[Math.sin(angle) * 0.12, 0, Math.cos(angle) * 0.12]}
                 material={chromeMaterial}
               >
-                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} rotation={[0, 0, Math.PI / 2]} />
+                <cylinderGeometry args={[0.02, 0.02, 0.17, 8]} />
               </mesh>
             );
           })}
@@ -492,10 +494,10 @@ export default function OfficialSarthiRobot({
 
       {/* Headlight Housings */}
       <mesh position={[0.35, 0.2, 0.98]} material={armorMaterial}>
-        <cylinderGeometry args={[0.1, 0.1, 0.08, 16]} rotation={[Math.PI / 2, 0, 0]} />
+        <cylinderGeometry args={[0.1, 0.1, 0.08, 16]} />
       </mesh>
       <mesh position={[-0.35, 0.2, 0.98]} material={armorMaterial}>
-        <cylinderGeometry args={[0.1, 0.1, 0.08, 16]} rotation={[Math.PI / 2, 0, 0]} />
+        <cylinderGeometry args={[0.1, 0.1, 0.08, 16]} />
       </mesh>
 
       {/* Emergency LED Lights */}

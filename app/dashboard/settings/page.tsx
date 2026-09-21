@@ -15,10 +15,19 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+type NotificationSettings = {
+  email: boolean;
+  push: boolean;
+  sms: boolean;
+  taskUpdates: boolean;
+  securityAlerts: boolean;
+  marketing: boolean;
+};
+
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState('profile');
   const [showPassword, setShowPassword] = useState(false);
-  const [notifications, setNotifications] = useState({
+  const [notifications, setNotifications] = useState<NotificationSettings>({
     email: true,
     push: true,
     sms: false,
@@ -36,7 +45,7 @@ export default function SettingsPage() {
     { id: 'data', name: 'Data & Privacy', icon: Database },
   ];
 
-  const handleNotificationChange = (key: string) => {
+  const handleNotificationChange = (key: keyof NotificationSettings) => {
     setNotifications(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -170,8 +179,8 @@ function NotificationSettings({
   notifications, 
   onChange 
 }: { 
-  notifications: typeof notifications;
-  onChange: (key: string) => void;
+  notifications: NotificationSettings;
+  onChange: (key: keyof NotificationSettings) => void;
 }) {
   return (
     <div className="space-y-6">
@@ -179,12 +188,12 @@ function NotificationSettings({
 
       <div className="space-y-4">
         {[
-          { key: 'email', label: 'Email Notifications', description: 'Receive notifications via email' },
-          { key: 'push', label: 'Push Notifications', description: 'Receive push notifications in browser' },
-          { key: 'sms', label: 'SMS Notifications', description: 'Receive notifications via SMS' },
-          { key: 'taskUpdates', label: 'Task Updates', description: 'Get notified about task progress' },
-          { key: 'securityAlerts', label: 'Security Alerts', description: 'Important security notifications' },
-          { key: 'marketing', label: 'Marketing Communications', description: 'Receive updates about new features' },
+          { key: 'email' as const, label: 'Email Notifications', description: 'Receive notifications via email' },
+          { key: 'push' as const, label: 'Push Notifications', description: 'Receive push notifications in browser' },
+          { key: 'sms' as const, label: 'SMS Notifications', description: 'Receive notifications via SMS' },
+          { key: 'taskUpdates' as const, label: 'Task Updates', description: 'Get notified about task progress' },
+          { key: 'securityAlerts' as const, label: 'Security Alerts', description: 'Important security notifications' },
+          { key: 'marketing' as const, label: 'Marketing Communications', description: 'Receive updates about new features' },
         ].map((item) => (
           <div
             key={item.key}
@@ -197,14 +206,14 @@ function NotificationSettings({
             <button
               onClick={() => onChange(item.key)}
               className={`relative w-12 h-6 rounded-full transition-colors ${
-                notifications[item.key as keyof typeof notifications] 
+                notifications[item.key] 
                   ? 'bg-blue-500' 
                   : 'bg-gray-600'
               }`}
             >
               <span
                 className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${
-                  notifications[item.key as keyof typeof notifications] 
+                  notifications[item.key] 
                     ? 'left-7' 
                     : 'left-1'
                 }`}

@@ -15,10 +15,17 @@ import {
   X,
   LogOut,
   Bell,
-  Home
+  Home,
+  LucideIcon
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+
+type NavigationItem = {
+  name: string;
+  href: string;
+  icon: LucideIcon;
+};
 
 export default function GuestLayout({
   children,
@@ -29,7 +36,7 @@ export default function GuestLayout({
   const pathname = usePathname();
   const router = useRouter();
 
-  const navigation = [
+  const navigation: NavigationItem[] = [
     { name: 'Dashboard', href: '/guest', icon: Home },
     { name: 'Live Camera', href: '/guest/camera', icon: Video },
     { name: 'Simulation', href: '/guest/simulation', icon: Gamepad2 },
@@ -143,7 +150,7 @@ function SidebarContent({
   pathname, 
   onLogout 
 }: { 
-  navigation: typeof navigation;
+  navigation: NavigationItem[];
   pathname: string;
   onLogout: () => void;
 }) {
