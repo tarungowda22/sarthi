@@ -45,7 +45,7 @@ export default function LoginPage() {
       if (formData.email === 'gowdatarun899@gmail.com' && formData.password === 'Tarungowda@22') {
         localStorage.setItem('sarthi-auth', 'admin');
         localStorage.setItem('sarthi-user', JSON.stringify({ email: formData.email, role: 'admin' }));
-        router.push('/mission-preview');
+        router.push('/dashboard');
       } else {
         setError('Invalid Credentials');
       }
@@ -53,7 +53,7 @@ export default function LoginPage() {
       // Guest mode - no authentication required
       localStorage.setItem('sarthi-auth', 'guest');
       localStorage.setItem('sarthi-user', JSON.stringify({ role: 'guest' }));
-      router.push('/mission-preview');
+      router.push('/dashboard');
     }
   };
 

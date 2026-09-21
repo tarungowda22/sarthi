@@ -85,7 +85,6 @@ export default function DashboardPage() {
   const [demoAiDetection, setDemoAiDetection] = useState<any>(null);
   const [showMissionReport, setShowMissionReport] = useState(false);
   const [missionReportData, setMissionReportData] = useState<any>(null);
-  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     setCurrentTime(new Date().toLocaleTimeString());
@@ -310,7 +309,6 @@ export default function DashboardPage() {
     setMissionTime(0);
     setConnectionStatus('connected');
     setGpsStatus('connected');
-    setVideoError(false);
     
     // Initialize mission data
     const missionId = `mission-${Date.now()}`;
@@ -373,10 +371,6 @@ export default function DashboardPage() {
       setMissionReportData(history[history.length - 1]);
       setShowMissionReport(true);
     }
-  };
-
-  const handleVideoError = () => {
-    setVideoError(true);
   };
 
   // Demo mode timer
@@ -857,26 +851,14 @@ export default function DashboardPage() {
             </div>
             <div className="relative aspect-video bg-black/50 rounded-lg overflow-hidden">
               {isDemoMode ? (
-                videoError ? (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Camera className="w-12 h-12 text-gray-600 mx-auto mb-2" />
-                      <p className="text-gray-500 text-sm">MISSION VIDEO NOT INSTALLED</p>
-                      <p className="text-gray-600 text-xs mt-1">Place video at: public/videos/sarthi-mission-demo.mp4</p>
-                    </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <Camera className="w-12 h-12 text-gray-600 mx-auto mb-2" />
+                    <p className="text-gray-500 text-sm">MISSION DEMONSTRATION</p>
+                    <p className="text-gray-600 text-xs mt-1">AI-Generated Rescue Video</p>
+                    <p className="text-gray-500 text-xs mt-2">Video preview not available</p>
                   </div>
-                ) : (
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    onError={handleVideoError}
-                    src="/videos/sarthi-mission-demo.mp4"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                )
+                </div>
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
